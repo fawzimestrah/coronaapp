@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AppTreasure_Admin</string>
+
+    <style name="AppTheme.CustomTheme">
+
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+    <string name="title_activity_maps">Map</string>
+
+</resources>
