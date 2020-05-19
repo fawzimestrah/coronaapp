@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:id="@+id/CUST_ImageView"
+        android:padding="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@mipmap/ic_launcher"
+        ></ImageView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#00DDDD"
+        android:id="@+id/Idadapter_NameCountry"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/CUST_ImageView"
+        android:text="Medium Text"
+        android:paddingLeft="30dp"
+        android:layout_marginTop="20dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#00DDDD"
+        android:id="@+id/IdTadapterDate"
+        android:layout_below="@+id/Idadapter_NameCountry"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+
+        android:layout_toRightOf="@+id/CUST_ImageView"
+        android:text="Small Text"
+        android:paddingLeft="30dp"
+        android:layout_marginTop="0dp"
+
+        android:layout_marginBottom="10dp"
+        ></TextView>
+
+
+</RelativeLayout>
