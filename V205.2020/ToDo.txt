@@ -1,0 +1,24 @@
+Admin:
+
+1- Register -> to activity [FM] ??
+2- Register -> message error [HJ]
+3- About -> contents [HJ]
+4- Help -> Contents [HJ]
+5- Notifications -> contents [FM] **
+6- Notifications -> layout [FM]   
+7- Notifications -> layout activity [FM]
+8- Notifications -> layout edit popup [FM] **
+9- Notifications -> layout submit button [FM] **
+10- Cities -> contents [FM]**
+11- Cities -> layout activity [HJ]
+12- Cities -> layout edit popup [HJ]
+13- Cities -> layout button [HJ]  
+14- Icons map [FM] 
+15- Scroll view -> button submit edit layout [FM] **
+16- Scroll view -> button submit add layout [FM]  ** 
+17- layout popup -> black border [HJ]
+18- problem return to activity [FM]  ** 
+19- Fragment map in the main activity [HJ]
+20- Allow to access to camera and maps services at the start of the app [HJ]
+21- Scroll view in the main menu  
+
