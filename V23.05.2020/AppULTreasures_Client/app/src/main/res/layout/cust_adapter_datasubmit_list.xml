@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:id="@+id/IdImagePostCust"
+    ></ImageView>
+
+    <ProgressBar
+        android:id="@+id/pBarImg"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        >
+    </ProgressBar>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:id="@+id/IdTextCaptionLCust"
+        android:text="Name :"
+        android:layout_below="@id/IdImagePostCust"
+        android:layout_marginBottom="10dp"
+        ></TextView>
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:textSize="15dp"
+    android:id="@+id/IdTextLCust"
+    android:layout_below="@id/IdImagePostCust"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/IdTextCaptionLCust"
+        ></TextView>
+
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Description :"
+        android:id="@+id/IdTextCaptionMCust"
+        android:layout_below="@id/IdTextLCust"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:id="@+id/IdTextMCust"
+        android:layout_below="@id/IdTextLCust"
+
+        android:layout_toRightOf="@id/IdTextCaptionMCust"
+        ></TextView>
+
+
+
+
+</RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
