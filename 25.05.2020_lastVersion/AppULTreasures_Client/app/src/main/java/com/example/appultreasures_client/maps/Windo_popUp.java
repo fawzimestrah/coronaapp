@@ -33,6 +33,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -81,6 +82,7 @@ boolean CheckHosp,CheckHome;
     private Uri imgUri;
     String URI_Saved; // mn3abiha bl fileUpload wmnsta3mla bl button submit
     ProgressBar mProgressBar;
+    CardView card;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,7 +109,9 @@ boolean CheckHosp,CheckHome;
         getWindow().setLayout((int) (width * 0.8), (int) (height * 0.7));
 
         mProgressBar=findViewById(R.id.progressBar);
-
+        card= findViewById(R.id.IdCardView);
+        card.setMaxCardElevation(0);
+        card.setRadius(15);
 
 
         mStorageRef= FirebaseStorage.getInstance().getReferenceFromUrl("gs://p-ul4-zahle-app1.appspot.com");
@@ -493,7 +497,8 @@ mArrayAdapter_city = new ArrayAdapter(getApplicationContext(), android.R.layout.
         if(requestCode==1 && resultCode==RESULT_OK && data!=null && data.getData()!=null ){
             imgUri=data.getData();
             Img.setImageURI(imgUri);
-
+            // show card
+            card.setVisibility(View.VISIBLE);
 
         }else if (requestCode==0 ){
             Toast.makeText(getApplicationContext(),"done IMage onActivityResulty Code=0 " ,Toast.LENGTH_LONG).show();
@@ -511,6 +516,10 @@ mArrayAdapter_city = new ArrayAdapter(getApplicationContext(), android.R.layout.
             if (resultCode == RESULT_OK) {
                 Bitmap imageBM = (Bitmap) data.getExtras().get("data");
                 Img.setImageBitmap(imageBM);
+
+                // show card
+                card.setVisibility(View.VISIBLE);
+
                 // hala2 bdna nle2e method tsayev l image bitmap krmel na3mla uplad mn trajet m3ayan
                 String root = Environment.getExternalStorageDirectory().toString();
                 File myDir = new File(root + "/saved_imagesLoaction");

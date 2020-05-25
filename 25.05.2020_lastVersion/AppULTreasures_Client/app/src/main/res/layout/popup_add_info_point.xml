@@ -90,13 +90,29 @@ tools:context=".MainActivity">
                     android:maxLines="1"
                     android:layout_below="@+id/name"/>
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/IdCardView"
                     android:layout_marginTop="20dp"
-                    android:id="@+id/ShowImageView"
-                    android:layout_below="@+id/city"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@id/city"
+                    app:cardBackgroundColor="#E6E6E6"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="10dp"
+                    android:visibility="gone">
+
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/ShowImageView"
+
+                        />
+
+                </androidx.cardview.widget.CardView>
+
 
                 <Button
                     android:id="@+id/idButtonload"
@@ -105,7 +121,7 @@ tools:context=".MainActivity">
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:layout_below="@+id/ShowImageView"
+                    android:layout_below="@+id/IdCardView"
                     android:text="Browse"
                     android:textColor="#FFF"
                     android:background="@drawable/theme_button"/>

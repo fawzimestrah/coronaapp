@@ -79,7 +79,8 @@ public class Windo_popup_infoEdit extends Activity {
         BsubmitDone=findViewById(R.id.idButtonSubmit_admin);
         BDelete=findViewById(R.id.IdButtonDelete_admin);
         Ecity=findViewById(R.id.city);
-
+        mProgressBar=findViewById(R.id.progressBar);
+        showDialog();
         if(extra!=null) {
 
 
@@ -114,7 +115,7 @@ public class Windo_popup_infoEdit extends Activity {
             @Override
             public void onClick(View v) {
                 if (Ename.getText().length()>3 &&EDescription.getText().length()>2) {
-
+                    showDialog();
                     DataSubmit Dpop_up = new DataSubmit();
                     Dpop_up.setLatitude(extra.getDouble("Cliked_Latitude"));
                     Dpop_up.setLongitude(extra.getDouble("Cliked_Longitude"));
@@ -123,7 +124,7 @@ public class Windo_popup_infoEdit extends Activity {
                     Dpop_up.setImageURL(Url);
                     Dpop_up.setCity(Ecity.getText().toString());
                     DataSubmit.Update_Point_BYUser(Dpop_up.getLatitude(), Dpop_up.getLongitude(), Dpop_up.getFull_Name(), Url, Dpop_up.getImageName(), KEY, Dpop_up.getCity(),extra.getString("User"));
-
+                    hideDialog();
                     Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                     intent.putExtra("Submit_bool", true);
                     intent.putExtra("Cliked_Latitude", Dpop_up.getLatitude());
@@ -187,13 +188,26 @@ public class Windo_popup_infoEdit extends Activity {
         }
 
         protected void onPostExecute(Bitmap result) {
+
             bmImage.setImageBitmap(result);
+
+            hideDialog();
         }
     }
 
 
 
 
+    private void showDialog(){
+        mProgressBar.setVisibility(View.VISIBLE);
+
+    }
+
+    private void hideDialog(){
+        if(mProgressBar.getVisibility() == View.VISIBLE){
+            mProgressBar.setVisibility(View.INVISIBLE);
+        }
+    }
 
 
 }

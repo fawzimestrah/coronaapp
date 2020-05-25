@@ -3,6 +3,7 @@ package com.example.appultreasures_client.maps;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 
 import com.example.appultreasures_client.R;
 
@@ -40,6 +42,7 @@ public class Windo_popUp_Admin_check extends Activity {
     Button BsubmitDone,Baff;
     String Url;
     ProgressBar mProgressBar;
+    CardView card;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +74,10 @@ public class Windo_popUp_Admin_check extends Activity {
         Img=findViewById(R.id.ShowImageView);
         Baff=findViewById(R.id.idButtonshow);
         mProgressBar=findViewById(R.id.progressBar);
+         card= findViewById(R.id.IdCardView);
+        card.setMaxCardElevation(0);
+        card.setRadius(15);
+
 
 
 
@@ -149,6 +156,14 @@ public class Windo_popUp_Admin_check extends Activity {
         protected void onPostExecute(Bitmap result)
         {
             bmImage.setImageBitmap(result);
+
+                bmImage.setMinimumWidth(card.getWidth());
+            bmImage.setMinimumHeight(card.getHeight());
+
+
+
+
+
 
             hideDialog();
         }

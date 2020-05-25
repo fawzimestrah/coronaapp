@@ -114,13 +114,27 @@ tools:context=".MainActivity">
                     android:textColor="#FFF"
                     android:background="@drawable/theme_button"/>
 
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/IdCardView"
                     android:layout_marginTop="20dp"
-                    android:id="@+id/ShowImageView"
-                    android:layout_below="@+id/idButtonshow"
-                    />
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@id/idButtonshow"
+                    app:cardBackgroundColor="#E6E6E6"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="10dp">
+
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/ShowImageView"
+
+                        />
+
+                </androidx.cardview.widget.CardView>
             </RelativeLayout>
 
 
