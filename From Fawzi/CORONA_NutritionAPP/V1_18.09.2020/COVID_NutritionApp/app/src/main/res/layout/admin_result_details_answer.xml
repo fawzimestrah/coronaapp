@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_marginTop="2dp"
+        android:visibility="invisible"
+
+        />
+
+    <ImageView
+        android:id="@+id/IdInfoPerson"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_help_outline_black_24dp" />
+
+    <TextView
+        android:layout_marginTop="90dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name :"
+        android:id="@+id/IdT1"
+        ></TextView>
+    <EditText
+        android:layout_marginTop="90dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdEname"
+
+        android:layout_toRightOf="@id/IdT1"
+        ></EditText>
+
+
+    <TextView
+
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" desc:"
+        android:id="@+id/IdT2"
+        android:layout_below="@id/IdT1"
+        ></TextView>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/IdEname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdEdesc"
+        android:layout_toRightOf="@id/IdT2"
+        ></EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/IdEdesc"
+        android:id="@+id/IdViewQuest"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="8"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Question 1:"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:id="@+id/IdTQues"
+                android:layout_weight="2"
+                ></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Groups"></TextView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/IdGroup"
+                    android:layout_weight="5"></EditText>
+            </LinearLayout>
+        </LinearLayout>
+        <EditText
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/IdEQues">
+
+        </EditText>
+
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IdViewQuest"
+        android:layout_marginTop="20dp"
+        android:layout_toLeftOf="@id/Idnext"
+        android:id="@+id/IdPrev"
+        android:text="Prev Quest">
+
+    </Button>
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IdViewQuest"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Idnext"
+        android:text="Next Quest"
+        >
+
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdBDelete"
+        android:text="Delete"
+        android:layout_below="@id/IdPrev"
+        android:layout_marginTop="20dp"
+
+        ></Button>
+
+
+</RelativeLayout>
