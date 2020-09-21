@@ -1,13 +1,15 @@
 package com.example.covid_nutritionapp;
 
+import java.util.ArrayList;
+
 public class Data_Question {
     private String Key_value=null ;
     private  String Key_form;
     private String Question;
     private  int num_Item;
     private String group;
-
-
+    private String TypeQuestion;
+    private ArrayList<String> choix=new ArrayList<String>();
     public Data_Question() {
     }
 
@@ -62,4 +64,20 @@ public class Data_Question {
         Key_form = key_form;
     }
 
+
+    public String getTypeQuestion() {
+        return TypeQuestion;
+    }
+
+    public void setTypeQuestion(String typeQuestion) {
+        TypeQuestion = typeQuestion;
+    }
+
+    public ArrayList<String> getChoix() {
+        return choix;
+    }
+
+    public void AddChoix(String choix) {
+        this.choix.add(choix);
+    }
 }

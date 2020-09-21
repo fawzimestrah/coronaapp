@@ -16,8 +16,9 @@ public class Data_answer {
 
     public Data_answer() {
     }
-    public Data_answer(String Quest) {
+    public Data_answer(String Quest,String key_Quest) {
     this.setQuestion(Quest);
+    this.setKey_value(key_Quest);
     }
 
     public String getKey_value() {
@@ -113,7 +114,6 @@ public class Data_answer {
             myRef.child(keyvalue).setValue(D); // fine shila hl2
                                                                     // bas lbde a3mlo eno ma hot flag complet =>bl activity admin nshouf 3adad kl group wbsir b3ml test
                                                                         // if nb == nbtotal ==> be5eda w eza la ma b5da
-
         }
         else {
             myRef.push().setValue(D);   //.child("Data")..push....

@@ -2,8 +2,22 @@
 <RelativeLayout    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
+<RelativeLayout
+    android:id="@+id/L1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+<Spinner
+    android:id="@+id/IdSpinnernamegroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="250dp"
+    ></Spinner>
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/L1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <TextView
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
@@ -48,7 +62,7 @@
        <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:weightSum="8"
+           android:weightSum="7"
            android:orientation="horizontal">
             <TextView
                 android:layout_width="match_parent"
@@ -58,7 +72,7 @@
                 android:textStyle="bold"
                 android:textSize="25dp"
                 android:id="@+id/IdTQues"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 ></TextView>
            <LinearLayout
                android:layout_width="match_parent"
@@ -75,14 +89,21 @@
                 android:id="@+id/IdGroup"
                 android:layout_weight="5"></EditText>
            </LinearLayout>
+
        </LinearLayout>
-           <EditText
+        <Spinner
+            android:id="@+id/IdmSpinnerQuest"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            ></Spinner>
+           <LinearLayout
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/IdEQues">
+            android:id="@+id/IdEQues"
+               android:orientation="vertical">
 
-        </EditText>
+        </LinearLayout>
 
     </LinearLayout>
     <Button
@@ -115,4 +136,6 @@
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
         ></Button>
+
+    </RelativeLayout>
 </RelativeLayout>

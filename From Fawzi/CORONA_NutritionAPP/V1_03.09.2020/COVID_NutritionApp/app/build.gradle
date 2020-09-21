@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
+
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
 
@@ -13,6 +14,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+
+        2
     }
 
     buildTypes {
@@ -32,11 +36,29 @@ dependencies {
 
 // Importanntt
     implementation 'com.google.firebase:firebase-database:19.3.0'
+    //Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //firebase
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-analytics:17.0.0'
     implementation 'com.google.firebase:firebase-analytics:17.5.0'
 
-    implementation 'com.google.firebase:firebase-analytics:17.0.0'
+    implementation 'com.google.firebase:firebase-storage:16.0.4'
+    implementation 'com.google.firebase:firebase-storage:17.0.0'
+
+    // Firebase Core
+    implementation 'com.google.firebase:firebase-core:17.4.1'
+    // Firestore Firestore
+    implementation 'com.google.firebase:firebase-firestore:21.4.3'
+
+    implementation 'com.google.firebase:firebase-firestore:21.6.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+
 }

@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -23,63 +33,52 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="80dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" UserName" />
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/IdEUsername"/>
+                android:id="@+id/IdEUsername"
+                android:inputType="textEmailAddress"
+                android:hint="@string/prompt_email"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="80dp">
+            android:layout_marginRight="40dp"
+            android:layout_marginLeft="40dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Password :" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/IdEPassword"
                 android:inputType="textPassword"
-                />
+                android:hint="@string/password"
+            />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="5"
-            android:layout_marginTop="25dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2">
-            </TextView>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/IdButtonLogin"
-                android:text="Login Admin "
-                ></Button>
-
-            <Button
-                android:layout_marginLeft="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/IdButtonLoginClient"
-                android:text="Login Client"
-                ></Button>
-        </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:weightSum="5"
+          android:layout_marginTop="25dp">
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_weight="2.5">
+          </TextView>
+          <Button
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Login"
+              android:id="@+id/IdLogin"
+              android:textColor="#FFF"
+              android:background="@drawable/theme_button"
+              ></Button>
+      </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,8 +94,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/IdButtonRegister"
-                android:text="CREATE ACCOUNT "
+                android:text="Register "
+                android:textColor="@color/linkBlue"
+                android:background="@color/White"
                 ></Button>
+
         </LinearLayout>
 
         <LinearLayout

@@ -77,13 +77,15 @@
                     android:layout_weight="5"></EditText>
             </LinearLayout>
         </LinearLayout>
-        <EditText
+
+        <LinearLayout
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/IdEQues">
+            android:id="@+id/IdEQues"
+            android:orientation="horizontal">
 
-        </EditText>
+        </LinearLayout>
 
 
     </LinearLayout>

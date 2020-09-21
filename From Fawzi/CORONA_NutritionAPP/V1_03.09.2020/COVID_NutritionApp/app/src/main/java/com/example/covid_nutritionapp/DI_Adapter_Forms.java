@@ -20,12 +20,10 @@ public class DI_Adapter_Forms extends ArrayAdapter<Data_forms> {
     ArrayList<Data_forms> myData=null;
 
     public DI_Adapter_Forms(@NonNull Context context, int resource, List<Data_forms> myData) {
-
         super(context, resource, myData);
         this.myContext=context;
         this.resource=resource;
         this.myData= (ArrayList<Data_forms>) myData;
-
     }
 
     @Nullable
@@ -40,9 +38,7 @@ public class DI_Adapter_Forms extends ArrayAdapter<Data_forms> {
         View row=convertView;
         LayoutInflater inflater= LayoutInflater.from(myContext);
         row= inflater.inflate(resource, parent,false);
-
         TextView Tname=row.findViewById(R.id.idCustName);
-
         TextView TDate=row.findViewById(R.id.idCustDate);
         Tname.setText(myData.get(position).getNameform());
         TDate.setText(myData.get(position).getDateform());
