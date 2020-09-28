@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:id="@+id/L1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+<Spinner
+    android:id="@+id/IdSpinnernamegroup"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="250dp"
+    ></Spinner>
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/L1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name :"
+        android:id="@+id/IdT1"
+        ></TextView>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdEname"
+
+        android:layout_toRightOf="@id/IdT1"
+        ></EditText>
+
+
+    <TextView
+
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" desc:"
+        android:id="@+id/IdT2"
+        android:layout_below="@id/IdT1"
+        ></TextView>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/IdEname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdEdesc"
+        android:layout_toRightOf="@id/IdT2"
+        ></EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/IdViewQuest"
+        android:layout_below="@id/IdEdesc">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:weightSum="7"
+           android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Question 1:"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:id="@+id/IdTQues"
+                android:layout_weight="3"
+                ></TextView>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical"
+               >
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Groups"></TextView>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/IdGroup"
+                android:layout_weight="5"></EditText>
+           </LinearLayout>
+
+       </LinearLayout>
+        <Spinner
+            android:id="@+id/IdmSpinnerQuest"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            ></Spinner>
+           <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/IdEQues"
+               android:orientation="vertical">
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IdViewQuest"
+        android:layout_marginTop="20dp"
+        android:layout_toLeftOf="@id/Idnext"
+        android:id="@+id/IdPrev"
+        android:text="Prev Quest"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/custom_button1"
+        android:textColor="#FFF"
+        android:textStyle="bold">
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/IdViewQuest"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Idnext"
+        android:text="Next Quest"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/custom_button1"
+        android:textColor="#FFF"
+        android:textStyle="bold">
+
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdBSubmit"
+        android:text="Submit"
+        android:layout_below="@id/IdPrev"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/custom_button1"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        ></Button>
+
+    </RelativeLayout>
+</RelativeLayout>

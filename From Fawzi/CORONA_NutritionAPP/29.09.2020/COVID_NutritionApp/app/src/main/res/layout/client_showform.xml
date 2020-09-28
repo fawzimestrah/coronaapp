@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdEname"
+        android:textSize="25dp"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="monospace"
+        android:text="form"
+        android:background="@drawable/cadre_background_textview"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:ems="20"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        ></TextView>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/IdEname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdEdesc"
+        android:textSize="10dp"
+        android:fontFamily="monospace"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="24dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:ems="10"
+        android:background="@drawable/cadre_background_textview"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/IdEdesc"
+        android:id="@+id/IdViewQuest"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="8"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/IdTQues"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:layout_marginTop="60dp"
+                android:layout_weight="2"
+                android:text="Question 1:"
+                android:textSize="25dp"
+                android:textStyle="bold"></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="italic"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/cadre_background_textview"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginRight="24dp"
+                    android:ems="20"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Groups"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/IdGroup"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_weight="5"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/IdEQues"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idradiogroup"
+            ></RadioGroup>
+
+    </LinearLayout>
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="10dp"
+    >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/IdPrev"
+        android:text="Prev Quest"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/custom_button1"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        >
+
+    </Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/Idnext"
+        android:text="Next Quest"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/custom_button1"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+        >
+
+    </Button>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/IdBSubmit"
+        android:text="Submit"
+        android:layout_below="@id/IdPrev"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/custom_button1"
+        android:textColor="#FFF"
+        android:textStyle="bold"
+
+        ></Button>
+
+</RelativeLayout>
+</RelativeLayout>
