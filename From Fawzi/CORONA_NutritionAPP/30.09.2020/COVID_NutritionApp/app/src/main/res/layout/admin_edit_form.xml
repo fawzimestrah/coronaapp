@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/imageviewdetails"
+    android:src="@drawable/ic_help_outline_black_24dp"
+    android:layout_alignParentRight="true"/>
+
+        <RelativeLayout
+            android:layout_marginTop="80dp"
+        android:id="@+id/L1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <Spinner
+            android:id="@+id/IdSpinnernamegroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="250dp"
+            ></Spinner>-
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/L1">
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name :"
+            android:id="@+id/IdT1"
+            ></TextView>
+        <EditText
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/IdEname"
+
+            android:layout_toRightOf="@id/IdT1"
+            ></EditText>
+
+
+        <TextView
+
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" desc:"
+            android:id="@+id/IdT2"
+            android:layout_below="@id/IdT1"
+            ></TextView>
+        <EditText
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/IdEname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/IdEdesc"
+            android:layout_toRightOf="@id/IdT2"
+            ></EditText>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/IdEdesc"
+            android:id="@+id/IdViewQuest"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="8"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Question 1:"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:id="@+id/IdTQues"
+                    android:layout_weight="2"
+                    ></TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Groups"></TextView>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/IdGroup"
+                        android:layout_weight="5"></EditText>
+                </LinearLayout>
+            </LinearLayout>
+            <Spinner
+                android:id="@+id/IdmSpinnerQuest"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                ></Spinner>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/IdEQues"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/IdViewQuest"
+            android:layout_marginTop="20dp"
+            android:layout_toLeftOf="@id/IdBdelete"
+            android:id="@+id/IdPrev"
+            android:text="Prev Quest">
+
+        </Button>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/IdBdelete"
+            android:text="Delete Question"
+            android:layout_below="@id/IdViewQuest"
+            android:layout_centerHorizontal="true"
+            ></Button>
+        <Button
+            android:layout_toRightOf="@id/IdBdelete"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/IdViewQuest"
+            android:layout_marginTop="20dp"
+            android:id="@+id/Idnext"
+            android:text="Next Quest">
+
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/IdBEdit"
+            android:text="Edit "
+            android:layout_below="@id/IdPrev"
+            android:layout_marginTop="20dp"
+
+            ></Button>
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
+</RelativeLayout>

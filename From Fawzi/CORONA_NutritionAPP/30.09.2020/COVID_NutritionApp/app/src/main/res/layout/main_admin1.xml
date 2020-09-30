@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/idLogout"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_person_logout_black_24dp"
+        ></ImageView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_rename_form"
+        android:id="@+id/IdAddForm"
+        android:layout_below="@id/idLogout"></ImageView>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Information Form"
+        android:layout_toRightOf="@id/IdAddForm"
+        android:id="@+id/IdDetailsForm"
+
+        android:layout_below="@id/idLogout"
+        ></Button>
+
+
+    <GridView
+        android:numColumns="2"
+        android:gravity="center"
+        android:columnWidth="100dp"
+        android:stretchMode="columnWidth"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        android:layout_marginTop="25dp"
+        android:id="@+id/idLform"
+        android:layout_below="@+id/IdAddForm"
+        />
+
+
+</RelativeLayout>
