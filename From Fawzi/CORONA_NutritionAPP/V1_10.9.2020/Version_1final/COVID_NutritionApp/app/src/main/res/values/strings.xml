@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">COVID_NutritionApp</string>
+    <string name="name_type_adminMaster">Admin</string>
+    <string name="name_type_adminUser">A</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="resend_verification_email">Resend Verification Email</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="register">Register</string>
+    <string name="sign_in">Sign In</string>
+    <string name="password">Password</string>
+    <string name="tabian_consulting_logo">Tabian Consulting Logo</string>
+    <string name="email_registration">Email Registration</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="name_group">Name Group</string>
+    <string name="desc_group">Description</string>
+
+    <string name="desciption_register">
+        حضرة السيد(ة) الكريم(ة)،
+        \n
+        إن تعاونكم مهم جدا لنجاح هذه الدراسة.
+        \n
+        نرجو منكم الإجابة عن الأسئلة التالية بدقة وصراحة.
+        \n
+        المعلومات الواردة فيها ستبقى سرية ولن تستعمل إلا لأهداف علمية.
+        \n
+        شكرا لكم سلفا، ونتمنى لكم الصحة والعافية. وتفضلوا بقبول فائق الاحترام.
+        \n
+        مدة تعبئة هذه الاستمارة حوالي 20 دقيقة. الغرض من هذه الدراسة هو تقييم ورصد الحالة التغذوية والصحة العامة خلال حالات الطوارئ لغرض جمع بيانات دقيقة وعالية الجودة على الوضع الغذائي للأشخاص تحت الحجر الصحي بسبب جائحة COVID-19.
+        \n
+        نريد تقييم وضعك الغذائي عن طريق طرح أسئلة حول عاداتك الغذائية وأنماط نشاطك البدني وحالة الأمن الغذائي في منزلك وحالتك الغذائية قبل وأثناء الإغلاق بسبب جائحة COVID-19.
+    </string>
+    <string name="date_naissance">تاريخ الولادة</string>
+    <string name="sexe">الجنس:</string>
+    <string name="male">ذكر</string>
+    <string name="female">انثى</string>
+    <string name="poids_actuel">الوزن الحالي(kg)</string>
+    <string name="taille_actuelle">الطول الحالي(cm)</string>
+    <string name="niveau_edu">المستوى العلمي:</string>
+    <string name="niveau_edu0">أميّ</string>
+    <string name="niveau_edu1">ابتدائي</string>
+    <string name="niveau_edu2">متوسط</string>
+    <string name="niveau_edu3">ثانوي</string>
+    <string name="niveau_edu4">جامعي</string>
+    <string name="lieu_residance">أين تسكن/ين معظم أيام السنة؟</string>
+    <string name="liew_1">بيروت</string>
+    <string name="liew_2">جبل لبنان</string>
+    <string name="liew_3">الشمال</string>
+    <string name="liew_4">الجنوب</string>
+    <string name="liew_5">البقاع</string>
+    <string name="liew_6">نبطية</string>
+    <string name="liew_7">بعلبك – هرمل</string>
+    <string name="liew_8">عكار</string>
+    <string name="situation_sociale">الوضع الاجتماعي</string>
+    <string name="situation1">متزوج(ة)</string>
+    <string name="situation2">أعزب(عزباء)</string>
+    <string name="situation3">أرمل(ة)</string>
+    <string name="situation4">مطلق(ة)</string>
+    <string name="nb_prs_famille">عدد أفراد العائلة الذين يعيشون في منزلك(معك)</string>
+    <string name="nb_fils">عدد الأولاد</string>
+    <string name="nb_fils_prs">	عدد الأولاد على عاتقك</string>
+    <string name="nb_chambres">كم غرفة في منزلك(عدا الحمام والمطبخ) ؟</string>
+    <string name="cas_professionnel">الحالة المهنية:</string>
+    <string name="cas_1">أنا أعمل</string>
+    <string name="cas_2">تم تسريحي من العمل</string>
+    <string name="cas_3">لا أعمل أبدًا (ربة منزل مثلاً)</string>
+    <string name="cas_4">طالب</string>
+    <string name="spec_sante">المهنة: هل أنت أخصائي/ة رعاية صحية؟</string>
+    <string name="text_yes">نعم</string>
+    <string name="text_no">كلا</string>
+    <string name="assurance">هل لديك حالياً تأمين صحي؟</string>
+    <string name="ass_1">ضمان اجتماعي</string>
+    <string name="ass_2">تأمين خاص</string>
+    <string name="ass_3">مؤسسات عامة أخرى</string>
+    <string name="ass_4">لا تأمين صحي</string>
+    <string name="quest15">هل كنت تتبع توصيات الحجر الصحي من مختلف الوزارات في لبنان؟</string>
+    <string name="quest151">ضع درجة من 0 إلى 10</string>
+    <string name="quest16">هل تشرب/ين الكحول</string>
+    <string name="quest16_1">0 كوب في اليوم </string>
+    <string name="quest16_2">اقل من 2 كوب في اليوم</string>
+    <string name="quest16_3">أكثر من 2 كوب في اليوم</string>
+    <string name="quest17">هل تدخن/ين السجائر؟</string>
+    <string name="quest1718_1">سابقاً</string>
+    <string name="quest1718_2">نعم</string>
+    <string name="quest1718_3">أحياناً</string>
+    <string name="quest1718_4">لا</string>
+    <string name="quantite">الكمية (في اليوم)</string>
+    <string name="quest18">هل تدخن/ين النرجيلة؟</string>
+    <string name="emailar">البريد الإلكتروني</string>
+    <string name="passar">كلمة السر</string>
+    <string name="confirmpassar">تأكيد كلمة السر</string>
+
+    <!-- Firestore Strings -->
+    <string name="collection_users">Users</string>
+</resources>
