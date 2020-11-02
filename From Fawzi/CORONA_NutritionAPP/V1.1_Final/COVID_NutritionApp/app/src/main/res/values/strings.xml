@@ -1,0 +1,197 @@
+<resources>
+    <string name="app_name">COVID_NutritionApp</string>
+    <string name="name_type_adminMaster">Admin</string>
+    <string name="name_type_adminUser">A</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="resend_verification_email">Resend Verification Email</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="register">Register</string>
+    <string name="sign_in">Sign In</string>
+    <string name="password">Password</string>
+    <string name="tabian_consulting_logo">Tabian Consulting Logo</string>
+    <string name="email_registration">Email Registration</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="name_group">Name Group</string>
+    <string name="desc_group">Description</string>
+
+    <string name="desciption_register_AR">
+        حضرة السيد(ة) الكريم(ة)،
+        \n
+        إن تعاونكم مهم جدا لنجاح هذه الدراسة.
+        \n
+        الهدف من هذا التطبيق الالكتروني هو تقييم ورصد الحالة التغذوية والصحة العامة خلال حالات الطوارئ لغرض جمع بيانات دقيقة وعالية الجودة على الوضع الغذائي للناس.
+        \n
+        إن تعاونكم مهم جدا لنجاح هذه الدراسة. نرجو منكم الإجابة عن الأسئلة التالية بدقة وصراحة .
+        \n
+        المعلومات الواردة فيها ستبقى سرية ولن تستعمل إلا لأهداف علمية.
+        \n
+         شكرا لكم سلفا، ونتمنى لكم الصحة والعافية.
+        \n
+        وتفضلوا بقبول فائق الاحترام.
+    </string>
+    <string name="date_naissance_AR">تاريخ الولادة</string>
+    <string name="sexe_AR">الجنس:</string>
+    <string name="male_AR">ذكر</string>
+    <string name="female_AR">انثى</string>
+    <string name="poids_actuel_AR">الوزن الحالي(kg)</string>
+    <string name="taille_actuelle_AR">الطول الحالي(cm)</string>
+    <string name="niveau_edu_AR">المستوى العلمي:</string>
+    <string name="niveau_edu0_AR">أميّ</string>
+    <string name="niveau_edu1_AR">ابتدائي</string>
+    <string name="niveau_edu2_AR">متوسط</string>
+    <string name="niveau_edu3_AR">ثانوي</string>
+    <string name="niveau_edu4_AR">جامعي</string>
+    <string name="lieu_residance_AR">أين تسكن/ين معظم أيام السنة؟</string>
+    <string name="liew_1_AR">بيروت</string>
+    <string name="liew_2_AR">جبل لبنان</string>
+    <string name="liew_3_AR">الشمال</string>
+    <string name="liew_4_AR">الجنوب</string>
+    <string name="liew_5_AR">البقاع</string>
+    <string name="liew_6_AR">النبطية</string>
+    <string name="liew_7_AR">بعلبك – الهرمل</string>
+    <string name="liew_8_AR">عكار</string>
+    <string name="situation_sociale_AR">الوضع الاجتماعي</string>
+    <string name="situation1_AR">متزوج(ة)</string>
+    <string name="situation2_AR">أعزب(عزباء)</string>
+    <string name="situation3_AR">أرمل(ة)</string>
+    <string name="situation4_AR">مطلق(ة)</string>
+    <string name="nb_prs_famille_AR">عدد أفراد العائلة الذين يعيشون في منزلك(معك)</string>
+    <string name="nb_fils_AR">عدد الأولاد</string>
+    <string name="nb_fils_prs_AR">	عدد الأولاد على عاتقك</string>
+    <string name="nb_chambres_AR">كم غرفة في منزلك(عدا الحمام والمطبخ) ؟</string>
+    <string name="cas_professionnel_AR">الحالة المهنية:</string>
+    <string name="cas_1_AR">أنا أعمل</string>
+    <string name="cas_2_AR">تم تسريحي من العمل</string>
+    <string name="cas_3_AR">لا أعمل أبدًا (ربة منزل مثلاً)</string>
+    <string name="cas_4_AR">طالب</string>
+    <string name="spec_sante_AR">المهنة: هل أنت أخصائي/ة رعاية صحية؟</string>
+    <string name="text_yes_AR">نعم</string>
+    <string name="text_no_AR">كلا</string>
+    <string name="assurance_AR">هل لديك حالياً تأمين صحي؟</string>
+    <string name="ass_1_AR">ضمان اجتماعي</string>
+    <string name="ass_2_AR">تأمين خاص</string>
+    <string name="ass_3_AR">مؤسسات عامة أخرى</string>
+    <string name="ass_4_AR">لا تأمين صحي</string>
+    <string name="quest16_AR">هل تشرب/ين الكحول</string>
+    <string name="quest16_1_AR">0 كوب في اليوم </string>
+    <string name="quest16_2_AR">اقل من 2 كوب في اليوم</string>
+    <string name="quest16_3_AR">أكثر من 2 كوب في اليوم</string>
+    <string name="quest17_AR">هل تدخن/ين السجائر؟</string>
+    <string name="quest1718_1_AR">سابقاً</string>
+    <string name="quest1718_2_AR">نعم</string>
+    <string name="quest1718_3_AR">أحياناً</string>
+    <string name="quest1718_4_AR">لا</string>
+    <string name="quantite_AR">الكمية (في اليوم)</string>
+    <string name="quest18_AR">هل تدخن/ين النرجيلة؟</string>
+    <string name="emailar_AR">البريد الإلكتروني</string>
+    <string name="passar_AR">كلمة السر</string>
+    <string name="confirmpassar_AR">تأكيد كلمة السر</string>
+
+/// eng
+    <string name="desciption_register_EN">
+        Dear Sir/Madame.
+        \n
+        The aim of this mobile application is to assess and monitor the nutritional status and public health
+        during emergencies for the purpose of collecting accurate and high-quality data on the nutritional status of population.
+        \n
+        Your cooperation is very important for the success of this study.
+        \n
+        Please answer the following questions accurately and in explicitly.
+        \n
+        Information contained in it will remain secret and will be used only for scientific purposes.
+        \n
+        Thank you in advance and we wish you health and wellness.
+        \n
+        Sincerely yours.
+    </string>
+    <string name="date_naissance_EN"> Date of birth :  </string>
+    <string name="sexe_EN">Gender :</string>
+    <string name="male_EN">male</string>
+    <string name="female_EN">female</string>
+    <string name="poids_actuel_EN">Current weight (kg)</string>
+    <string name="taille_actuelle_EN">Current height(cm)</string>
+    <string name="niveau_edu_EN">Level of education :</string>
+    <string name="niveau_edu0_EN">Illiterate</string>
+    <string name="niveau_edu1_EN">Primary</string>
+    <string name="niveau_edu2_EN">Intermediate</string>
+    <string name="niveau_edu3_EN">Secondary</string>
+    <string name="niveau_edu4_EN">University</string>
+    <string name="lieu_residance_EN">Where do you live most of the year ? </string>
+    <string name="liew_1_EN">Beirut</string>
+    <string name="liew_2_EN">Mount Lebanon </string>
+    <string name="liew_3_EN">North Lebanon </string>
+    <string name="liew_4_EN">South Lebanon </string>
+    <string name="liew_5_EN">Bekaa </string>
+    <string name="liew_6_EN">Nabatiyeh </string>
+    <string name="liew_7_EN">Baalbak- Hermel </string>
+    <string name="liew_8_EN">Akkar</string>
+    <string name="situation_sociale_EN">Social status :</string>
+    <string name="situation1_EN">single</string>
+    <string name="situation2_EN">married</string>
+    <string name="situation3_EN">divorced</string>
+    <string name="situation4_EN">widower</string>
+    <string name="nb_prs_famille_EN"> The number of family members who \n live in your home (persons):</string>
+    <string name="nb_fils_EN">Number of children that you have :</string>
+    <string name="nb_fils_prs_EN">Number of children that you are \n responsible for:</string>
+    <string name="nb_chambres_EN">How many rooms in your house \n(except bathrooms and kitchen): </string>
+    <string name="cas_professionnel_EN">Occupational status:</string>
+    <string name="cas_1_EN">I work </string>
+    <string name="cas_2_EN">I have been fired </string>
+    <string name="cas_3_EN">Never work (housewife ...) </string>
+    <string name="cas_4_EN">student</string>
+    <string name="spec_sante_EN">Occupation: Are you a healthcare professional</string>
+    <string name="text_yes_EN">Yes</string>
+    <string name="text_no_EN">No</string>
+    <string name="assurance_EN">Do you currently have health insurance? </string>
+    <string name="ass_1_EN">Social Security</string>
+    <string name="ass_2_EN">Private Insurance </string>
+    <string name="ass_3_EN">Other Public Institutions</string>
+    <string name="ass_4_EN">No Health Insurance</string>
+    <string name="quest16_EN">Do you drink alcohol?</string>
+    <string name="quest16_1_EN">0 cups/day </string>
+    <string name="quest16_2_EN">Less than 2 cups/day </string>
+    <string name="quest16_3_EN">More than 2 cups/day</string>
+    <string name="quest17_EN">Do you smoke cigarettes?</string>
+    <string name="quest1718_1_EN">Previously </string>
+    <string name="quest1718_2_EN">Yes </string>
+    <string name="quest1718_3_EN">Sometimes </string>
+    <string name="quest1718_4_EN">No</string>
+    <string name="quantite_EN">Quantify the amount per day:</string>
+    <string name="quest18_EN">Do you smoke Hookahs </string>
+    <string name="gpscountry">GPS Country</string>
+    <string name="gpscity">GPS City</string>
+
+    //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <string name="finishquestionAR">شكرا لتعاونكم معنا في هذا الاحصاء !!</string>
+    <string name="finishquestionFR">Merci pour votre coopération avec nous !!</string>
+    <string name="finishquestionEN">Thanks for your cooperation !! </string>
+
+    <!-- Firestore Strings -->
+    <string name="collection_users">Users</string>
+
+
+
+</resources>

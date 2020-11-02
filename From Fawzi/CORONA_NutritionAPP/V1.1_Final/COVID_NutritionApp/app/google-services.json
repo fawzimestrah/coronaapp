@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "28106565854",
+    "firebase_url": "https://covid-nutrition20.firebaseio.com",
+    "project_id": "covid-nutrition20",
+    "storage_bucket": "covid-nutrition20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28106565854:android:0cc75802fe672c28b07a4f",
+        "android_client_info": {
+          "package_name": "com.example.covid_nutritionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28106565854-htjavcev46evqnj01kqm5rgm6s2tf2f2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.covid_nutritionapp",
+            "certificate_hash": "f7f8cd78b72b9cfc4632cc0b47a215c117bf5756"
+          }
+        },
+        {
+          "client_id": "28106565854-ahm9nstolc45ga8nt5trbadad2bhnd7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR-segkzUaQV9t3jX3u5nGzp81g6MHVSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28106565854-ahm9nstolc45ga8nt5trbadad2bhnd7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
