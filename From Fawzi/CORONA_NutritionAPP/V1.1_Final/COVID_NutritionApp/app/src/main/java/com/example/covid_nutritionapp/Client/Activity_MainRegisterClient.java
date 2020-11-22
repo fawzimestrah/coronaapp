@@ -5,8 +5,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -14,18 +16,24 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,11 +41,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.covid_nutritionapp.Activity_LoginActivity;
+import com.example.covid_nutritionapp.Admin.Activity_EditForm;
+import com.example.covid_nutritionapp.Admin.Activity_MainAdmin;
+import com.example.covid_nutritionapp.Data_Question;
+import com.example.covid_nutritionapp.Data_forms;
 import com.example.covid_nutritionapp.R;
 import com.example.covid_nutritionapp.User;
 import com.example.covid_nutritionapp.Data_User;
@@ -49,6 +62,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreSettings;
+import com.google.firebase.firestore.util.Listener;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -58,8 +72,10 @@ import java.util.Locale;
 import static android.text.TextUtils.isEmpty;
 
 public class Activity_MainRegisterClient extends AppCompatActivity {
+    private Layout layoutview;
     private static final String TAG = "RegisterActivity";
     private final int REQUEST_PERMISSIONS_REQUEST_CODE=44;
+    private Location lastKnownLocation = null;
     //widgets
     private EditText mEmail, mPassword, mConfirmPassword;
     private ProgressBar mProgressBar;
@@ -69,13 +85,13 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
     private RadioGroup sexe, niveau_Education, lieu_Resistance, situation_Sociale, specialiste_sante, assurance, alcool, cas_professionnel, ciguarette, narguile;
                     String sexeflag, niveau_Educationflag, lieu_Resistanceflag, situation_Socialeflag, specialiste_santeflag, assuranceflag, alcoolflag, cas_professionnelflag, ciguaretteflag, narguileflag
                     ,currentCity,latitude,longitude,country;
-
-    private  TextView tsexe,tDesciptionRegister,tEdu,tLieu,tEtat,tCasProf,tSpecSante,tAssurance,tAlcool,tfume,tnarguile;
+    private WebView tDesciptionRegister;
+    private  TextView tsexe,tEdu,tLieu,tEtat,tCasProf,tSpecSante,tAssurance,tAlcool,tfume,tnarguile;
     private RadioButton radioMale,radioFemale,radioEdu0,radioEdu1,radioEdu2,radioEdu3,radioEdu4,
-            radioLieu1,radioLieu2,radioLieu3,radioLieu4,radioLieu5,radioLieu6,radioLieu7,radioLieu8,
-            radioSituation1,radioSituation2,radioSituation3,radioSituation4,
-            radioCas1,radioCas2,radioCas3,radioCas4,radioSpecNo,radioSpecYes,radioAss1,radioAss2,radioAss3,radioAss4,
-            radioAlcoll1,radioAlcoll2,radioAlcoll3,radiofume1,radiofume2,radiofume3,radiofume4,radioNarg1,radioNarg2,radioNarg3,radioNarg4;
+                        radioLieu1,radioLieu2,radioLieu3,radioLieu4,radioLieu5,radioLieu6,radioLieu7,radioLieu8,
+                        radioSituation1,radioSituation2,radioSituation3,radioSituation4,
+                        radioCas1,radioCas2,radioCas3,radioCas4,radioSpecNo,radioSpecYes,radioAss1,radioAss2,radioAss3,radioAss4,
+                        radioAlcoll1,radioAlcoll2,radioAlcoll3,radiofume1,radiofume2,radiofume3,radiofume4,radioNarg1,radioNarg2,radioNarg3,radioNarg4;
 
     private RadioGroup[] radioGroupArray;
     //type account
@@ -85,16 +101,14 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ArrayAdapter mArrayAdapterLanguage;
     private Spinner mSpinnerLanguage;
-    private String language="";;
+    private String language="";
+    private ScrollView scrollView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_client_layout);
         mSpinnerLanguage=findViewById(R.id.IdSpinnerlanguage);
-
-
-
         mEmail = (EditText) findViewById(R.id.input_email);
         mPassword = (EditText) findViewById(R.id.input_password);
         mConfirmPassword = (EditText) findViewById(R.id.input_confirm_password);
@@ -123,7 +137,8 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
 
 
 
-        tDesciptionRegister=(TextView)findViewById(R.id.textView4);
+        tDesciptionRegister=(WebView) findViewById(R.id.textView4);
+        tDesciptionRegister.setBackgroundColor(Color.TRANSPARENT);
         tEdu=findViewById(R.id.textView2);
         radioMale=findViewById(R.id.Radio_male);
         radioFemale=findViewById(R.id.Radio_female);
@@ -175,6 +190,24 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
         radioNarg3=findViewById(R.id.Radio_18_3);
         radioNarg4=findViewById(R.id.Radio_18_4);
 
+
+         View.OnFocusChangeListener listener= new View.OnFocusChangeListener() {
+             @Override
+             public void onFocusChange(View v, boolean hasFocus) {
+                 if(!hasFocus){
+                     hideKeyboard(Activity_MainRegisterClient.this);
+                 }
+             }
+         };
+
+        taille.setOnFocusChangeListener(listener);
+        poids.setOnFocusChangeListener(listener);
+       nb_prs_famille.setOnFocusChangeListener(listener);
+       nb_fils.setOnFocusChangeListener(listener);
+       nb_fils_prs.setOnFocusChangeListener(listener);
+       nb_chambres.setOnFocusChangeListener(listener);
+       nb_ciguarette.setOnFocusChangeListener(listener);
+       nb_Narguile.setOnFocusChangeListener(listener);
 
         getLocation();
 
@@ -365,7 +398,7 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
                     Snackbar.make(parentLayout, "You must fill out all the fields", Snackbar.LENGTH_SHORT).show();
 
                 }
-            }
+                    }
         });
 
 
@@ -524,13 +557,12 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
                             Client.setLongitude(longitude);
                             Client.setCity(currentCity);
                             Data_User.Insert_User(Client);
-
                             redirectLoginScreen();
 
                         } else {
                             //Toast.makeText(getApplicationContext(),"error: "+task.getException().getMessage(),Toast.LENGTH_LONG).show();
                             View parentLayout = findViewById(android.R.id.content);
-                            Snackbar.make(parentLayout, "Something went wrong 22.\nerror:" + task.getException().getMessage(), Snackbar.LENGTH_SHORT).show();
+                            Snackbar.make(parentLayout, "Something went wrong 22.\nerror:" + task.getException().getMessage(), Snackbar.LENGTH_LONG).show();
                             hideDialog();
                         }
 
@@ -544,9 +576,46 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
      */
     private void redirectLoginScreen() {
         //Log.d(TAG, "redirectLoginScreen: redirecting to login screen.");
-        Intent intent = new Intent(Activity_MainRegisterClient.this, Activity_LoginActivity.class);
-        startActivity(intent);
-        finish();
+        AlertDialog.Builder builder = new AlertDialog.Builder(Activity_MainRegisterClient.this);
+        builder.setTitle("Confidentiality and Data Security");
+        if(language.equals("EN")) {
+            builder.setMessage(R.string.Note_Register_EN);
+            builder.setPositiveButton("Ok ", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int which) {
+                    // Do nothing but close the dialog
+                    setResult(2);
+                    finish();
+
+                }
+            });
+
+        }
+        else{
+            builder.setMessage(R.string.Note_Register_AR);
+            builder.setNegativeButton("Ok ", new DialogInterface.OnClickListener() {
+
+                public void onClick(DialogInterface dialog, int which) {
+                    // Do nothing but close the dialog
+                    setResult(2);
+                    finish();
+
+                }
+            });
+
+        }
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                // Do nothing but close the dialog
+                setResult(2);
+                finish();
+
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+
 
     }
 
@@ -580,19 +649,34 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
 
 
     public void getLocation() {
-        showDialog();
         LocationManager locationManager = null;
-        Location lastKnownLocation = null;
         LocationListener locationListener = null;
-
         Intent intent = getIntent();
         if (intent.getIntExtra("Place Number",0) == 0 ){
             // Zoom into users location
             locationManager = (LocationManager)this.getSystemService(Context.LOCATION_SERVICE);
-
             locationListener = new LocationListener() {
                 @Override
                 public void onLocationChanged(Location location) {
+                    lastKnownLocation = location;
+                    // location city and contry
+                    Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.ENGLISH);
+                    try {
+                        /**
+                         * Geocoder.getFromLocation - Returns an array of Addresses
+                         * that are known to describe the area immediately surrounding the given latitude and longitude.
+                         */
+
+                        List<Address> addresses = geocoder.getFromLocation(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude(), 1);
+                        currentCity = addresses.get(0).getSubAdminArea();
+                        longitude = String.valueOf(addresses.get(0).getLongitude());
+                        latitude = String.valueOf(addresses.get(0).getLatitude());
+                        country = addresses.get(0).getCountryName();
+
+                    } catch (IOException e) {
+                        //e.printStackTrace();
+                        Log.e("namecities", "Impossible to connect to Geocoder", e);
+                    }
 
                 }
 
@@ -611,18 +695,14 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
 
                 }
             };
-
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0,0,locationListener);
-
 
                 lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                 if(lastKnownLocation!=null) {
                     Log.e("test", "lastlocations");
-
-                    // test
+                    // location city and contry
                     Geocoder geocoder = new Geocoder(getApplicationContext(), Locale.ENGLISH);
-
                     try {
                         /**
                          * Geocoder.getFromLocation - Returns an array of Addresses
@@ -653,13 +733,11 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
 
 
                 }else{// location is off
-                    Toast.makeText(getApplicationContext(), "Please turn on location ", Toast.LENGTH_LONG).show();
-                    redirectLoginScreen();
+                    statusCheck();
 
                 }
             } else {
                 Log.e("Debut","ELSE OnmapReady");
-                Toast.makeText(getApplicationContext(), "No Permission GRANTED", Toast.LENGTH_LONG).show();
                 ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_PERMISSIONS_REQUEST_CODE);
 
             }
@@ -677,14 +755,14 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
             if (grantResults.length <= 0) {
                 // If user interaction was interrupted, the permission request is cancelled and you
                 // receive empty arrays.
-                finish();
+//                finish();
             } else if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission was granted. Kick off the process of building and connecting
                 // GoogleApiClient.
                 getLocation(); // Retry
             } else {
                 // Permission denied.
-                finish();
+   //             finish();
             }
         }
     }
@@ -692,7 +770,6 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
 
     }
 
@@ -703,7 +780,25 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
 
         switch (languageQuest){
             case "EN":
-                tDesciptionRegister.setText(R.string.desciption_register_EN);
+//                tDesciptionRegister.setText(R.string.desciption_register_EN);
+
+
+                tDesciptionRegister.loadData("<html align=\"justify\">" +
+                        "        <head>" +
+                        "        </head>" +
+                        "        <body>" +
+                        " <p >" +
+                        "Dear Sir/Madame." +
+                        "</br>The aim of this mobile application is to assess and monitor the nutritional status and public health" +
+                        "during emergencies for the purpose of collecting accurate and high-quality data on the nutritional status of the population." +
+                        " </br>Your cooperation is very important for the success of this study." +
+                        "</br>Please answer the following questions accurately and in explicitly." +
+                        "Information contained in it will remain secret and will be used only for scientific purposes." +
+                        "</br>Thank you in advance and we wish you health and wellness." +
+                        " Sincerely yours. </p> " +
+                        " </body> " +
+                        " </html>","text/html","utf-8");
+
                 date_naissance.setHint(R.string.date_naissance_EN);
                 tsexe.setText(R.string.sexe_EN);
                 radioMale.setText(R.string.male_EN);
@@ -771,7 +866,32 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
                 break;
             case "AR":
 
-                tDesciptionRegister.setText(R.string.desciption_register_AR);
+//                tDesciptionRegister.setText(R.string.desciption_register_AR);
+
+                tDesciptionRegister.loadData("  <html dir=\"rtl\" lang=\"ar\">" +
+                        "        <head>" +
+                        "        </head>" +
+                        "        <body>" +
+                        "        <p align=\"justify\"  >" +
+                        "    حضرة السيد(ة) الكريم(ة)،" +
+                        "" +
+                        "        إن تعاونكم مهم جدا لنجاح هذه الدراسة." +
+                        "" +
+                        "        الهدف من هذا التطبيق الالكتروني هو تقييم ورصد الحالة التغذوية والصحة العامة خلال حالات الطوارئ لغرض جمع بيانات دقيقة وعالية الجودة على الوضع الغذائي للناس." +
+                        "" +
+                        "         نرجو منكم الإجابة عن الأسئلة التالية بدقة وصراحة ." +
+                        "" +
+                        "        المعلومات الواردة فيها ستبقى سرية ولن تستعمل إلا لأهداف علمية." +
+                        "" +
+                        "         شكرا لكم سلفا، ونتمنى لكم الصحة والعافية." +
+                        "" +
+                        "        وتفضلوا بقبول فائق الاحترام.  </p>" +
+                        "        </body>" +
+                        "        </html>" +
+                        "    ", "text/html; charset=UTF-8", "utf-8");
+
+
+
                 date_naissance.setHint(R.string.date_naissance_AR);
                 tsexe.setText(R.string.sexe_AR);
 
@@ -855,4 +975,38 @@ public class Activity_MainRegisterClient extends AppCompatActivity {
     }
 */
 
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
+
+
+    public void statusCheck() {
+        final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            buildAlertMessageNoGps();
+
+        }
+    }
+
+    private void buildAlertMessageNoGps() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        dialog.cancel();
+                    }
+                });
+        final AlertDialog alert = builder.create();
+        alert.show();
+    }
 }

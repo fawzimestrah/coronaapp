@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,12 +18,12 @@
     android:layout_marginLeft="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginRight="16dp"
+    android:paddingBottom="50dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     tools:ignore="MissingConstraints">
-
 
     <ScrollView
     android:layout_width="match_parent"
@@ -63,9 +70,10 @@
                 android:paddingRight="10dp"
                 android:paddingBottom="10dp"
                 android:text="form"
+                android:inputType="textMultiLine"
                 android:textAlignment="center"
                 android:textColor="@color/White"
-                android:textSize="25dp" />
+                android:textSize="15dp" />
 
 
             </LinearLayout>
@@ -83,7 +91,6 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/custom_layout_form"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,54 +108,68 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:weightSum="7"
+            >
 
             <TextView
+                android:id="@+id/textviewgroup"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:background="@drawable/cadre_background_textview"
                 android:gravity="center"
                 android:text="Group:"
                 android:textAlignment="center"
-                android:textColor="@color/dimGrey" />
+                android:textColor="@color/dimGrey"
+                />
 
             <TextView
                 android:id="@+id/IdGroup"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="16dp"
-                android:layout_weight="2"
+                android:layout_weight="3"
                 android:background="@drawable/cadre_background_textview"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/dimGrey" />
             <Spinner
                 android:id="@+id/idSpinnerLanguage"
-
+                android:background="@drawable/custom_layout_form"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="16dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:textColor="#8f7373"
                 android:paddingStart="12dp"
                 android:paddingEnd="12dp"
-
                 />
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/IdTQues"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/IdTQueslayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
+            android:background="@drawable/custom_layout_message"
             android:layout_marginEnd="16dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:paddingRight="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
             android:layout_marginRight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        <WebView
+            android:id="@+id/IdTQues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:padding="8dp"
             android:layout_weight="2"
-            android:background="@drawable/custom_textview_grey"
             android:gravity="center"
             android:text="Question 1:"
             android:textAlignment="center"
@@ -156,13 +177,32 @@
             android:textSize="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            tools:ignore="WebViewLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/idprogressQuest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+
+            android:layout_marginRight="16dp"
+            android:textAlignment="center"
+            android:padding="8dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:textColor="@color/darkGrey"
+            android:background="@drawable/custom_textview_grey"
+            app:layout_constraintTop_toBottomOf="@id/IdTQueslayout"
+            android:gravity="center_horizontal" />
 
         <LinearLayout
             android:id="@+id/IdEQues"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
@@ -170,7 +210,7 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/IdTQues">
+            app:layout_constraintTop_toBottomOf="@+id/idprogressQuest">
 
         </LinearLayout>
 
@@ -191,6 +231,9 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -201,6 +244,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal"
+        android:background="@color/White"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -238,7 +282,4 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

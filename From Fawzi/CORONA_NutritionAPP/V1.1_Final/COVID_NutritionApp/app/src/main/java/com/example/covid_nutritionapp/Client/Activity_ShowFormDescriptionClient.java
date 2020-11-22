@@ -1,9 +1,11 @@
 package com.example.covid_nutritionapp.Client;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,7 +30,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Activity_ShowFormDescriptionClient extends AppCompatActivity {
 
-    TextView eName, eDesc;
+    private int REQUEST_RESUTLT_MAIN=2;
+    private int REQUEST_CONTINUE=1;
+
+    TextView eName;
+    WebView eDesc;
     Button bCancel,bContinue;
     FirebaseUser user ;
     String userId ="";
@@ -48,7 +55,8 @@ public class Activity_ShowFormDescriptionClient extends AppCompatActivity {
         userId = user.getUid();
 
         eName =(TextView) findViewById(R.id.IdEname);
-        eDesc =(TextView) findViewById(R.id.IdEdesc);
+        eDesc =(WebView) findViewById(R.id.IdEdesc);
+        eDesc.setBackgroundColor(Color.TRANSPARENT);
         bCancel=(Button) findViewById(R.id.IdBcancel);
         bContinue=(Button) findViewById(R.id.IdBContunie);
         mSpinnerLanguage=(Spinner)findViewById(R.id.IdSpinnerlanguage);
@@ -76,8 +84,36 @@ public class Activity_ShowFormDescriptionClient extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 language = mSpinnerLanguage.getSelectedItem().toString();
-                if(!language.equals("")) {
-                    eDesc.setText(currentForm.getDescForm_lang(language));
+                if( !language.equals("")  && !language.equals(" ")  ) {
+//                    eDesc.setText(currentForm.getDescForm_lang(language));
+                    if(language.equals("AR")){
+                        eDesc.loadData("<html dir=\"rtl\" lang=\"ar\">\n" +
+                                "        <head>\n" +
+                                "        </head>\n" +
+                                "        <body>\n" +
+                                "        <p align=\"justify\">\n" +
+                                currentForm.getDescForm_lang(language)
+                                +"          </p>\n" +
+                                "        </body>\n" +
+                                "        </html>\n" +
+                                "", "text/html; charset=UTF-8", "utf-8");
+
+                    }else {
+                        eDesc.loadData("<html>\n" +
+                                "        <head>\n" +
+                                "        </head>\n" +
+                                "        <body>\n" +
+                                "        <p align=\"justify\">\n" +
+                                currentForm.getDescForm_lang(language)
+                                + "          </p>\n" +
+                                "        </body>\n" +
+                                "        </html>\n" +
+                                "", "text/html; charset=UTF-8", "utf-8");
+                    }
+                }else{
+//                    eDesc.setText("No Translate" );
+                    eDesc.loadData("No Translate", "text/html; charset=UTF-8", "utf-8");
+
                 }
 
             }
@@ -105,6 +141,7 @@ public class Activity_ShowFormDescriptionClient extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                showDialog();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Data_forms D = snapshot.getValue(Data_forms.class);
                     D.setKey_value(snapshot.getKey());
@@ -116,7 +153,9 @@ public class Activity_ShowFormDescriptionClient extends AppCompatActivity {
 
                 }
                 eName.setText(currentForm.getNameform());
-                eDesc.setText(currentForm.getDescform());
+//                eDesc.setText(currentForm.getDescform());
+                eDesc.loadData(currentForm.getDescform(), "text/html; charset=UTF-8", "utf-8");
+
                 hideDialog();
             }
             @Override
@@ -133,6 +172,8 @@ public class Activity_ShowFormDescriptionClient extends AppCompatActivity {
                 showDialog();
                 Intent intent = new Intent(Activity_ShowFormDescriptionClient.this, Activity_ShowFormClient.class);
                 intent.putExtra("keyForm",currentForm.getKey_value());
+                intent.putExtra("language",language);
+
                 startActivityForResult(intent,1);
                 hideDialog();
             }
@@ -141,6 +182,8 @@ public class Activity_ShowFormDescriptionClient extends AppCompatActivity {
         bCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setResult(REQUEST_RESUTLT_MAIN);
+                showDialog();
                 finish();
             }
         });
@@ -162,4 +205,13 @@ public class Activity_ShowFormDescriptionClient extends AppCompatActivity {
         }
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==REQUEST_CONTINUE){ // showFormClient
+            setResult(REQUEST_RESUTLT_MAIN);
+            finish();
+        }
+    }
 }

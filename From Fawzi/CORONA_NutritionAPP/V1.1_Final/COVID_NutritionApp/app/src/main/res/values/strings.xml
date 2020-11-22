@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">COVID_NutritionApp</string>
+    <string name="app_name">NAS</string>
     <string name="name_type_adminMaster">Admin</string>
     <string name="name_type_adminUser">A</string>
     <string name="prompt_email">Email</string>
@@ -30,7 +30,7 @@
         \n
         الهدف من هذا التطبيق الالكتروني هو تقييم ورصد الحالة التغذوية والصحة العامة خلال حالات الطوارئ لغرض جمع بيانات دقيقة وعالية الجودة على الوضع الغذائي للناس.
         \n
-        إن تعاونكم مهم جدا لنجاح هذه الدراسة. نرجو منكم الإجابة عن الأسئلة التالية بدقة وصراحة .
+         نرجو منكم الإجابة عن الأسئلة التالية بدقة وصراحة .
         \n
         المعلومات الواردة فيها ستبقى سرية ولن تستعمل إلا لأهداف علمية.
         \n
@@ -99,19 +99,13 @@
 /// eng
     <string name="desciption_register_EN">
         Dear Sir/Madame.
-        \n
-        The aim of this mobile application is to assess and monitor the nutritional status and public health
-        during emergencies for the purpose of collecting accurate and high-quality data on the nutritional status of population.
-        \n
-        Your cooperation is very important for the success of this study.
-        \n
-        Please answer the following questions accurately and in explicitly.
-        \n
-        Information contained in it will remain secret and will be used only for scientific purposes.
-        \n
-        Thank you in advance and we wish you health and wellness.
-        \n
-        Sincerely yours.
+        \nThe aim of this mobile application is to assess and monitor the nutritional status and public health
+        during emergencies for the purpose of collecting accurate and high-quality data on the nutritional status of the population.
+        \nYour cooperation is very important for the success of this study.
+        \nPlease answer the following questions accurately and in explicitly.
+        \nInformation contained in it will remain secret and will be used only for scientific purposes.
+        \nThank you in advance and we wish you health and wellness.
+        \nSincerely yours.
     </string>
     <string name="date_naissance_EN"> Date of birth :  </string>
     <string name="sexe_EN">Gender :</string>
@@ -169,25 +163,55 @@
     <string name="quest18_EN">Do you smoke Hookahs </string>
     <string name="gpscountry">GPS Country</string>
     <string name="gpscity">GPS City</string>
-
-    //
-
-
-
-
-
-
-
-
-
-
+    <string name="Note_Register_AR">إذا وافقت على المشاركة في هذه الدراسة البحثية ،\n
+        فستبقى المعلومات سرية ما لم يتطلب القانون ذلك. سيتمكن الباحثون الرئيسيون فقط من الوصول المباشر إلى بياناتك. سيكون الوصول إلى البيانات محميًا بكلمة مرور ويمكن الوصول إليه فقط من قبل الباحث الرئيسي والمحققين المشاركين.\n\
+      أين سيتم تخزين البيانات؟ وكم ستبقى؟\n
+سيتم الاحتفاظ بالبيانات على أجهزة الكمبيوتر الخاصة بالباحثين وعلى خوادم برنامج المسح عبر الإنترنت و سيتم ازالتها فور انتهاء الدراسة.</string>
+    <string name="Note_Register_EN">
+        If you agree to participate in this research study, the information will be kept confidential. Unless required by law, only the principal investigators will have direct access to your data. Access to data will be password-protected and only accessible to the principle investigator and co-investigators.
+        \nWhere will data be stored? and how long it will be kept?
+        \nOn the researchers computers and on the servers for the online survey software
+        \nAll data will be removed after the achievement of data collection, accordingly.
+    </string>
 
 
+    <string name="About_AR">
+        <html dir="rtl" lang="ar">
+        <head>
+        </head>
+        <body>
+        <p align="justify"  >
+              <b>النظام الصحي للتقييم الغذائي:<br/></b>
+                الأفق الجديد للتقييم الغذائي أثناء حالات الطوارئ من خلال تقنيات الهاتف الجوال في دول الشرق الأوسط.<br/>
+                هذا التطبيق للهواتف الجوالة الذي تم تمويله من منظمة الصحة العالمية -المكتب الإقليمي لشرق المتوسط واشرف على تصميمه خبراء من كلية الصحة العامة و كلية العلوم (قسم علوم الحواسب) في الجامعة اللبنانية (لبنان) ، هو نهج منظم لتوفير معلومات مهمة وموثوقة لاتخاذ القرار ، وإنشاء أنظمة وموارد مشتركة من أجل شركاء الحكومة المضيفة والمنظمات الإنسانية. إنها طريقة مسح محسّنة توازن بين البساطة (للتقييم السريع لحالات الطوارئ الحادة) والسلامة الفنية في مناطق الشرق الأوسط.<br/>
+                <br/>يشهد العالم حاليًا جائحة COVID-19 ، وهناك عدد كبير من التوصيات المنشورة حول التغذية والأكل العاطفي وأنماط الأكل والنشاط البدني والأمن الغذائي. نظرًا لأن الحجر الصحي مرتبط بانقطاع روتين العمل ، فقد يرتبط ذلك بزيادة استهلاك الطاقة ، فضلاً عن استهلاك كميات أكبر من الدهون والنشويات والبروتينات. يمكن أن يؤدي هذا النمط الغذائي غير الصحي إلى زيادة خطر الإصابة بالسمنة ، ومع نمط الحياة المستقرة قد يؤدي الى خطر الاصابة بالأمراض غير المعدية المنتشرة بكثرة في إقليم شرق المتوسط.
 
-
-    <string name="finishquestionAR">شكرا لتعاونكم معنا في هذا الاحصاء !!</string>
-    <string name="finishquestionFR">Merci pour votre coopération avec nous !!</string>
-    <string name="finishquestionEN">Thanks for your cooperation !! </string>
+        </p>
+        </body>
+        </html>
+    </string>
+    <string name="About_EN">
+        <html>
+        <head>
+        </head>
+        <body>
+        <p align="justify">
+          <b>Nutritional Assessment System (NAS):</b>
+                <br/>the new horizon of nutritional assessment during emergencies through mobile technologies in the Middle Eastern Countries
+                <br/>This mobile-application that was funded by the Regional Office of the Eastern Mediterranean-World Health Organization and designed by professionals from Faculties of Public Health and Sciences (Computer science department) at the Lebanese University (Lebanon) is a systematized approach to provide critical,
+                reliable information for decision-making,and to establish shared systems and resources for host government partners and humanitarian organizations.
+                It is an improved survey method that balances simplicity (for rapid assessment of acute emergencies) and technical soundness in the Middle Eastern Regions.
+                <br/>The world is currently experiencing the pandemic of COVID-19, and there is a plethora of published recommendations on nutrition, emotional eating, eating patterns, physical activity and food security.
+                Since quarantine is associated to the interruption of the work routine, this could be associated with a greater energy intake, as well as the consumption of higher quantities of fats,
+                carbohydrates, and proteins. This unhealthy nutritional pattern could increase the risk of developing obesity that is, with sedentary lifestyle,
+                are two risk factors for developing non-communicable diseases, which prevalence s are already high in the Eastern Mediterranean Region.
+          </p>
+        </body>
+        </html>
+    </string>
+    <string name="finishquestionAR">شكرا لتعاونكم معنا في هذا الاحصاء </string>
+    <string name="finishquestionFR">Merci pour votre coopération avec nous </string>
+    <string name="finishquestionEN">Thanks for your cooperation.  </string>
 
     <!-- Firestore Strings -->
     <string name="collection_users">Users</string>
