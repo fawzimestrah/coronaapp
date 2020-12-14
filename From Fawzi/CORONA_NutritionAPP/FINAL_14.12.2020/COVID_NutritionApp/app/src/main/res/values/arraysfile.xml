@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <string-array name="listTypeQuestion">
+        <item name="TextField">TextField</item>
+        <item name="RadioButton">RadioButton</item>
+        <item name="CheckBox">CheckBox</item>
+        <item name="AutoCompleteText">AutoComplete</item>
+
+    </string-array>
+
+    <string-array name="languages" >
+        <item name="Arabic">AR</item>
+        <item name="English">EN</item>
+    <!--
+       <item name="Frensh">FR</item>
+    -->
+    </string-array>
+</resources>
